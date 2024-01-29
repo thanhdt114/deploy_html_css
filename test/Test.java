@@ -9,7 +9,8 @@ import src.util.LocalDateTimeUtil;
 public class Test {
     public static void main(String args[]) {
         System.out.println("java test");
-        Log.info("java test", "test 1");
+        Log.info("Test", "test 1");
+        Log.error("Test", "test 2");
 
         // LocalDateTime currentDate = LocalDateTimeUtil.getCurrentDate();
         // DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");

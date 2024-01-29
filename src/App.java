@@ -8,6 +8,6 @@ public class App {
 
         AutoDeploy.run();
 
-        System.out.println("\nDEPLOY SUCCESSFULLY");
+        System.out.println("\nDEPLOY ENDED");
     }
 }

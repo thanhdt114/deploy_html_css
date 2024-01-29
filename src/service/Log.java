@@ -11,15 +11,26 @@ public class Log {
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
     private static String currentDateTime = currentLocalDateTime.format(formatter);
 
+    private static void all(String info) {
+        try {
+            FileWriter fw = new FileWriter("src/log/all.log", true);
+            fw.write(info + "\n");
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void info(String methodName, String description) {
         try {
-            FileWriter fw = new FileWriter("log/info.log", true);
+            FileWriter fw = new FileWriter("src/log/info.log", true);
 
-            String content = currentDateTime + " - INFO - " + methodName + " - " + description + "\n";
+            String content = currentDateTime + " - INFO - " + methodName + " - " + description;
 
-            fw.write(content);
+            fw.write(content + "\n");
             fw.close();
 
+            all(content);
             System.out.println(content);
         } catch (IOException e) {
             e.printStackTrace();
@@ -28,13 +39,14 @@ public class Log {
 
     public static void error(String methodName, String description) {
         try {
-            FileWriter fw = new FileWriter("log/error.log", true);
+            FileWriter fw = new FileWriter("src/log/error.log", true);
             
-            String content = currentDateTime + " - ERROR - " + methodName + " - " + description + "\n";
+            String content = currentDateTime + " - ERROR - " + methodName + " - " + description;
             
-            fw.write(content);
+            fw.write(content + "\n");
             fw.close();
 
+            all(content);
             System.out.println(content);
         } catch (IOException e) {
             e.printStackTrace();
