@@ -1,3 +1,5 @@
 /src/log/all.log
 /src/log/error.log
 /src/log/info.log
+
+*.class
